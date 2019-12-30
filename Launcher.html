@@ -6,6 +6,15 @@
     function onLoadFastBootScript() {
       if (true || experiment() == experimentClark2ID) {
         loadAppOverview();
+        // Valid only for the trigger of the native layer
+        // window.webkit.messageHandlers.experiment.postMessage(
+        //   experimentClark1ID
+        // );
+      } else {
+        // Valid only for the trigger of the native layer
+        // window.webkit.messageHandlers.experiment.postMessage(
+        //   experimentClark2ID
+        // );
       }
     }
 
@@ -17,17 +26,9 @@
       let expProbClark1 = 0.9;
       if (Math.random() <= expProbClark1) {
         // Clark 1.0 experiment selected
-        // Valid only for the trigger of the native layer
-        // window.webkit.messageHandlers.experiment.postMessage(
-        //   experimentClark1ID
-        // );
         return experimentClark1ID;
       } else {
         // Clark 2.0 experiment selected
-        // Valid only for the trigger of the native layer
-        // window.webkit.messageHandlers.experiment.postMessage(
-        //   experimentClark2ID
-        // );
         return experimentClark2ID;
       }
 
