@@ -7,20 +7,18 @@
       if (true || experiment() == experimentClark2ID) {
         loadAppOverview();
         loadEmberApp();
-        if (/iPhone/i.test(navigator.userAgent)) {
-          // Valid only for the trigger of the native layer
-          window.webkit.messageHandlers.experiment.postMessage(
-            experimentClark2ID
-          );
-        }
+        notifyNativeWithExperiment(experimentClark2ID)
       } else {
-        if (/iPhone/i.test(navigator.userAgent)) {
+        notifyNativeWithExperiment(experimentClark1ID)
+      }
+    }
+
+    function notifyNativeWithExperiment(decision) {
+      if (/iPhone/i.test(navigator.userAgent)) {
           // Valid only for the trigger of the native layer
           window.webkit.messageHandlers.experiment.postMessage(
-            experimentClark1ID
+            decision
           );
-        }
-      }
     }
 
     // decide which exepriment we want to run
