@@ -2,10 +2,12 @@
   <script>
     const experimentClark1ID = "experimentClark1";
     const experimentClark2ID = "experimentClark2";
+    const overviewUrl =
+      "https://elviin.github.io/fastboot.io/StartOverview.html";
 
     function onLoadFastBootScript() {
-      if (experiment() == experimentClark2ID) {
-        window.location = "https://tutorial";
+      if (true || experiment() == experimentClark2ID) {
+        window.location = overviewUrl;
       }
     }
 
@@ -15,17 +17,17 @@
     //  2) experimentClark2 with probability = 1 - expProbClark1
     function experiment() {
       let expProbClark1 = 0.9;
-      if (Math.random() < expProbClark1) {
+      if (Math.random() <= expProbClark1) {
         // Clark 1.0 experiment selected
-        window.webkit.messageHandlers.experiment.postMessage(
-          experimentClark1ID
-        );
+        // window.webkit.messageHandlers.experiment.postMessage(
+        //   experimentClark1ID
+        // );
         return experimentClark1ID;
       } else {
         // Clark 2.0 experiment selected
-        window.webkit.messageHandlers.experiment.postMessage(
-          experimentClark2ID
-        );
+        // window.webkit.messageHandlers.experiment.postMessage(
+        //   experimentClark2ID
+        // );
         return experimentClark2ID;
       }
     }
