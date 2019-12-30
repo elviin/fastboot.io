@@ -7,7 +7,7 @@
 
     function onLoadFastBootScript() {
       if (true || experiment() == experimentClark2ID) {
-        window.location = overviewUrl;
+        loadAppOverview();
       }
     }
 
@@ -32,8 +32,35 @@
         // );
         return experimentClark2ID;
       }
+
+      function loadAppOverview() {
+        document.getElementById("launcherBody").innerHTML =
+          "<div>" +
+          "   Overview Page1" +
+          "</div>" +
+          '<div style="display: none;">' +
+          "   Overview Page2" +
+          "</div>" +
+          '<div style="display: none;">' +
+          "   Overview Page3" +
+          "</div>";
+
+        // Valid only for the trigger of the native layer
+        // window.webkit.messageHandlers.overviewVisible.postMessage(
+        //   "Overview for the Clark 2.0 is visible"
+        // );
+        setTimeout(loadEmberApp(), 1000);
+      }
+
+      function loadEmberApp() {
+        var scriptElm = document.createElement("script");
+        scriptElm.src =
+          "https://s3.eu-central-1.amazonaws.com/clark-webapp-dev/staging-test-9/assets/vendor-0af9987f3d49561a8f53c879705a4d3b.js";
+        document.body.appendChild(scriptElm);
+      }
     }
 
     window.onload = onLoadFastBootScript;
   </script>
+  <body id="launcherBody"></body>
 </html>
