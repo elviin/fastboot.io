@@ -7,15 +7,19 @@
       if (true || experiment() == experimentClark2ID) {
         loadAppOverview();
         loadEmberApp();
-        // Valid only for the trigger of the native layer
-        // window.webkit.messageHandlers.experiment.postMessage(
-        //   experimentClark2ID
-        // );
+        if (/iPhone/i.test(navigator.userAgent)) {
+          // Valid only for the trigger of the native layer
+          window.webkit.messageHandlers.experiment.postMessage(
+            experimentClark2ID
+          );
+        }
       } else {
-        // Valid only for the trigger of the native layer
-        // window.webkit.messageHandlers.experiment.postMessage(
-        //   experimentClark1ID
-        // );
+        if (/iPhone/i.test(navigator.userAgent)) {
+          // Valid only for the trigger of the native layer
+          window.webkit.messageHandlers.experiment.postMessage(
+            experimentClark1ID
+          );
+        }
       }
     }
 
@@ -48,10 +52,12 @@
         "   </div>" +
         "</body>";
 
-      // Valid only for the trigger of the native layer
-      // window.webkit.messageHandlers.overviewVisible.postMessage(
-      //   "Overview for the Clark 2.0 is visible"
-      // );
+      if (/iPhone/i.test(navigator.userAgent)) {
+        // Valid only for the trigger of the native layer
+        window.webkit.messageHandlers.overviewVisible.postMessage(
+          "Overview for the Clark 2.0 is visible"
+        );
+      }
     }
 
     function loadEmberApp() {
