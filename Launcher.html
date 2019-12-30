@@ -2,8 +2,6 @@
   <script>
     const experimentClark1ID = "experimentClark1";
     const experimentClark2ID = "experimentClark2";
-    const overviewUrl =
-      "https://elviin.github.io/fastboot.io/StartOverview.html";
 
     function onLoadFastBootScript() {
       if (true || experiment() == experimentClark2ID) {
@@ -35,15 +33,17 @@
 
       function loadAppOverview() {
         document.getElementById("launcherBody").innerHTML =
-          "<div>" +
-          "   Overview Page1" +
-          "</div>" +
-          '<div style="display: none;">' +
-          "   Overview Page2" +
-          "</div>" +
-          '<div style="display: none;">' +
-          "   Overview Page3" +
-          "</div>";
+          '<body  id="launcherBody">' +
+          "   <div>" +
+          "     Overview Page1" +
+          "   </div>" +
+          '   <div style="display: none;">' +
+          "      Overview Page2" +
+          "   </div>" +
+          '   <div style="display: none;">' +
+          "      Overview Page3" +
+          "   </div>" +
+          "</body>";
 
         // Valid only for the trigger of the native layer
         // window.webkit.messageHandlers.overviewVisible.postMessage(
