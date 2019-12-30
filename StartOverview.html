@@ -16,9 +16,10 @@ app/blank page that loads the resources important for the Ember app.
 
 <script>
   window.onload = function() {
-    window.webkit.messageHandlers.fastbootDownloaded.postMessage(
-      "Fastboot for the experiment Clark 2.0"
-    );
+    // Valid only for the trigger of the native layer
+    // window.webkit.messageHandlers.fastbootDownloaded.postMessage(
+    //   "Fastboot for the experiment Clark 2.0"
+    // );
 
     var scriptElm = document.createElement("script");
     scriptElm.src =
