@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <div>
+            tutorial page1
+
+        </div>
+        <div style="display: none;">
+            tutorial page2
+        </div>
+        <div style="display: none;">
+            tutorial page3
+            // start ember on tapping a button ...
+        </div>
+
+    </body>
+</html>
+
+<script>
+window.onload=function(){
+    window.webkit.messageHandlers.fastbootDownloaded.postMessage("Fastboot for the experiment Clark 2.0");
+
+
+    var scriptElm = document.createElement('script');
+    scriptElm.src = 'ember.js';
+    document.body.appendChild(scriptElm);
+
+}
+</script>
