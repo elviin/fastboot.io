@@ -8,12 +8,12 @@
         loadAppOverview();
         // Valid only for the trigger of the native layer
         // window.webkit.messageHandlers.experiment.postMessage(
-        //   experimentClark1ID
+        //   experimentClark2ID
         // );
       } else {
         // Valid only for the trigger of the native layer
         // window.webkit.messageHandlers.experiment.postMessage(
-        //   experimentClark2ID
+        //   experimentClark1ID
         // );
       }
     }
@@ -31,34 +31,34 @@
         // Clark 2.0 experiment selected
         return experimentClark2ID;
       }
+    }
 
-      function loadAppOverview() {
-        document.getElementById("launcherBody").innerHTML =
-          '<body  id="launcherBody">' +
-          "   <div>" +
-          "     Overview Page1" +
-          "   </div>" +
-          '   <div style="display: none;">' +
-          "      Overview Page2" +
-          "   </div>" +
-          '   <div style="display: none;">' +
-          "      Overview Page3" +
-          "   </div>" +
-          "</body>";
+    function loadAppOverview() {
+      document.getElementById("launcherBody").innerHTML =
+        '<body  id="launcherBody">' +
+        "   <div>" +
+        "     Overview Page1" +
+        "   </div>" +
+        '   <div style="display: none;">' +
+        "      Overview Page2" +
+        "   </div>" +
+        '   <div style="display: none;">' +
+        "      Overview Page3" +
+        "   </div>" +
+        "</body>";
 
-        // Valid only for the trigger of the native layer
-        // window.webkit.messageHandlers.overviewVisible.postMessage(
-        //   "Overview for the Clark 2.0 is visible"
-        // );
-        setTimeout(loadEmberApp(), 1000);
-      }
+      // Valid only for the trigger of the native layer
+      // window.webkit.messageHandlers.overviewVisible.postMessage(
+      //   "Overview for the Clark 2.0 is visible"
+      // );
+      setTimeout(loadEmberApp(), 1000);
+    }
 
-      function loadEmberApp() {
-        var scriptElm = document.createElement("script");
-        scriptElm.src =
-          "https://s3.eu-central-1.amazonaws.com/clark-webapp-dev/staging-test-9/assets/vendor-0af9987f3d49561a8f53c879705a4d3b.js";
-        document.body.appendChild(scriptElm);
-      }
+    function loadEmberApp() {
+      var scriptElm = document.createElement("script");
+      scriptElm.src =
+        "https://s3.eu-central-1.amazonaws.com/clark-webapp-dev/staging-test-9/assets/vendor-0af9987f3d49561a8f53c879705a4d3b.js";
+      document.body.appendChild(scriptElm);
     }
 
     window.onload = onLoadFastBootScript;
