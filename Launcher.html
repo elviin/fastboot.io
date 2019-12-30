@@ -13,13 +13,6 @@
       }
     }
 
-    function notifyNativeWithExperiment(decision) {
-      if (/iPhone/i.test(navigator.userAgent)) {
-        // Valid only for the trigger of the native layer
-        window.webkit.messageHandlers.experiment.postMessage(decision);
-      }
-    }
-
     // decide which exepriment we want to run
     // iOS part should register a hook triggered on:
     //  1) experimentClark1 with probability = expProbClark1
@@ -48,7 +41,17 @@
         "      Overview Page3" +
         "   </div>" +
         "</body>";
+      notifyNativeWithVisibleOverview();
+    }
 
+    function notifyNativeWithExperiment(decision) {
+      if (/iPhone/i.test(navigator.userAgent)) {
+        // Valid only for the trigger of the native layer
+        window.webkit.messageHandlers.experiment.postMessage(decision);
+      }
+    }
+
+    function notifyNativeWithVisibleOverview() {
       if (/iPhone/i.test(navigator.userAgent)) {
         // Valid only for the trigger of the native layer
         window.webkit.messageHandlers.overviewVisible.postMessage(
