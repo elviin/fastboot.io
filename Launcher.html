@@ -28,16 +28,30 @@
       }
     }
 
+    function continue2Overview2() {
+      document.getElementById("div1").style.display = "none";
+      document.getElementById("div2").style.display = "block";
+      document.getElementById("div3").style.display = "none";
+    }
+
+    function continue2Overview3() {
+      document.getElementById("div1").style.display = "none";
+      document.getElementById("div2").style.display = "none";
+      document.getElementById("div3").style.display = "block";
+    }
+
     function loadAppOverview() {
       document.getElementById("launcherBody").innerHTML =
-        '<body  id="launcherBody">' +
+        '<body id="div1" id="launcherBody">' +
         "   <div>" +
         '     <img src="./overview_1.png">' +
+        '     <button onclick="continue2Overview2()">Deeper</button>' +
         "   </div>" +
-        '   <div style="display: none;">' +
+        '   <div id="div2" style="display: none;">' +
         '			<img src="./overview_2.png">' +
+        '     <button onclick="continue2Overview3()">Deeper</button>' +
         "   </div>" +
-        '   <div style="display: none;">' +
+        '   <div id="div3" style="display: none;">' +
         '			<img src="./overview_3.png">' +
         "   </div>" +
         "</body>";
