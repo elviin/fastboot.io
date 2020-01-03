@@ -42,16 +42,16 @@
 
     function loadAppOverview() {
       document.getElementById("launcherBody").innerHTML =
-        '<body id="launcherBody" bgcolor="#2b6cde">' +
+        '<body id="launcherBody" style="background-color=#2b6cde">' +
         '   <div id="div1">' +
-        '    <h5 style="text-align: center">OVERVIEW 1</h5>' +
+        '    <h5 style="text-align: center;font-size: 51px;" >OVERVIEW 1</h5>' +
         '     <button onclick="continue2Overview2()">Next</button>' +
         "   </div>" +
         '   <div id="div2" style="display: none;">' +
-        '     <h5 style="text-align: center">OVERVIEW 2</h5>' +
+        '     <h5 style="text-align: center;font-size: 51px;">OVERVIEW 2</h5>' +
         '     <button onclick="continue2Overview3()">Next</button>' +
         "   </div>" +
-        '   <div id="div3" style="display: none;">' +
+        '   <div id="div3" style="display: none;font-size: 51px;">' +
         '     <h5 style="text-align: center">OVERVIEW 3 </h5>' +
         "   </div>" +
         "</body>";
@@ -84,5 +84,5 @@
     window.onload = onLoadFastBootScript;
   </script>
   // tabbar will be here already
-  <body id="launcherBody" bgcolor="#ffc0cb"></body>
+  <body id="launcherBody" style="background-color=#ffc0cb"></body>
 </html>
