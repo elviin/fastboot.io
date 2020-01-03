@@ -5,7 +5,7 @@
     const experimentClark2ID = "experimentClark2.0";
 
     function onLoadFastBootScript() {
-      if (experiment() == experimentClark2ID) {
+      if (true || experiment() == experimentClark2ID) {
         loadAppOverview();
         loadEmberApp();
         notifyNativeWithExperiment(experimentClark2ID);
