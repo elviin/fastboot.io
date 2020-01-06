@@ -6,9 +6,9 @@
 
     function onLoadFastBootScript() {
       if (true || experiment() == experimentClark2ID) {
+        notifyNativeWithExperiment(experimentClark2ID);
         loadAppOverview();
         loadEmberApp();
-        notifyNativeWithExperiment(experimentClark2ID);
       } else {
         notifyNativeWithExperiment(experimentClark1ID);
       }
