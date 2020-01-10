@@ -56,22 +56,19 @@
         '     <h5 style="text-align: center">OVERVIEW 3 </h5>' +
         "   </div>" +
         "</body>";
-      notifyNativeWithVisibleOverview();
     }
 
-    function notifyNativeWithExperiment(decision) {
+    function notifyNativeWithExperiment1 {
       if (/iPhone/i.test(navigator.userAgent)) {
         // Valid only for the trigger of the native layer
-        window.webkit.messageHandlers.experiment.postMessage(decision);
+        window.webkit.messageHandlers.startClark1.postMessage();
       }
     }
 
-    function notifyNativeWithVisibleOverview() {
+    function notifyNativeWithExperiment2 {
       if (/iPhone/i.test(navigator.userAgent)) {
         // Valid only for the trigger of the native layer
-        window.webkit.messageHandlers.overviewVisible.postMessage(
-          "Overview for the Clark 2.0 is visible"
-        );
+        window.webkit.messageHandlers.startClark2.postMessage();
       }
     }
 
