@@ -6,8 +6,8 @@
 
     function onLoadFastBootScript() {
       if (experiment() == experimentClark2ID) {
-        notifyNativeWithExperiment(experimentClark2ID);
         loadAppOverview();
+        notifyNativeWithExperiment(experimentClark2ID);
         //loadEmberApp();
       } else {
         notifyNativeWithExperiment(experimentClark1ID);
@@ -19,7 +19,7 @@
     //  1) experimentClark1 with probability = expProbClark1
     //  2) experimentClark2 with probability = 1 - expProbClark1
     function experiment() {
-      let expProbClark1 = 0.5;
+      let expProbClark1 = 0.0;
       if (Math.random() <= expProbClark1) {
         // Clark 1.0 experiment selected
         return experimentClark1ID;
