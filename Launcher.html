@@ -61,14 +61,14 @@
     function notifyNativeWithExperiment1() {
       if (/iPhone/i.test(navigator.userAgent)) {
         // Valid only for the trigger of the native layer
-        window.webkit.messageHandlers.startClark1.postMessage();
+        window.webkit.messageHandlers.startClark1.postMessage("empty");
       }
     }
 
     function notifyNativeWithExperiment2() {
       if (/iPhone/i.test(navigator.userAgent)) {
         // Valid only for the trigger of the native layer
-        window.webkit.messageHandlers.startClark2.postMessage();
+        window.webkit.messageHandlers.startClark2.postMessage("empty");
       }
     }
 
