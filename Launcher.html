@@ -19,7 +19,7 @@
     //  1) experimentClark1 with probability = expProbClark1
     //  2) experimentClark2 with probability = 1 - expProbClark1
     function experiment() {
-      let expProbClark1 = 0.0;
+      let expProbClark1 = 0.5;
       if (Math.random() <= expProbClark1) {
         // Clark 1.0 experiment selected
         return experimentClark1ID;
@@ -61,14 +61,14 @@
     function notifyNativeWithExperiment1() {
       if (/iPhone/i.test(navigator.userAgent)) {
         // Valid only for the trigger of the native layer
-        window.clark.nativeapp.startClark1()
+        window.clark.nativeapp.startClark1Tour()
       }
     }
 
     function notifyNativeWithExperiment2() {
       if (/iPhone/i.test(navigator.userAgent)) {
         // Valid only for the trigger of the native layer
-        window.clark.nativeapp.startClark2()
+        window.clark.nativeapp.showWebView()
       }
     }
 
