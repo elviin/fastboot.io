@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "Q3S3D2JVTG.de.clark.ios.iphone.clark",
+        "paths": [
+          "*",
+          "/s/*",
+          "/de/app/*",
+          "/ahoy/*",
+          "NOT /de/password/edit*"
+        ]
+      }
+    ]
+  }
+}
